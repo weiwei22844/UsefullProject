@@ -1,0 +1,356 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_STATUS_BG           BITMAP  DISCARDABLE     "Pic\\BackPic.bmp"
+IDB_STATUS_CHAR         BITMAP  DISCARDABLE     "Pic\\Char.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "基础设置"
+    BEGIN
+        MENUITEM "帮助",                        IDM_HELP
+        MENUITEM "基础设置",                    IDM_SETTING
+        MENUITEM "关于输入法",                  IDM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                        IDM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETKEY DIALOG DISCARDABLE  0, 0, 255, 247
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "新宋体"
+BEGIN
+    GROUPBOX        "中英切换",IDC_STATIC,7,11,241,32
+    CONTROL         "左SHIFT",IDC_LSHIFT,"Button",BS_AUTORADIOBUTTON,17,26,
+                    43,10
+    GROUPBOX        "翻页键",IDC_STATIC,7,89,241,47
+    CONTROL         "逗号句号(,.)",IDC_FANYE1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,21,119,65,10
+    CONTROL         "减号等号(-,=)",IDC_FANYE2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,103,119,66,10
+    CONTROL         "方向左右建",IDC_FANYE3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,103,56,10
+    CONTROL         "左右中括号( [] )",IDC_FANYE4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,103,80,10
+    GROUPBOX        "多种输入法功能切换",IDC_STATIC,8,48,240,32
+    CONTROL         "左Ctrl",IDC_LCTRL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,19,63,40,10
+    CONTROL         "右Ctrl",IDC_RCTRL,"Button",BS_AUTORADIOBUTTON,67,64,40,
+                    10
+    CONTROL         "右SHIFT",IDC_RSHIFT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,71,25,43,10
+END
+
+IDD_SOFTKETBOARD DIALOGEX 0, 0, 201, 67
+STYLE DS_MODALFRAME | WS_POPUP
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 9, "System", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "`",IDC_dunhao,0,0,13,13
+    PUSHBUTTON      "1",IDC_1,13,0,13,13
+    PUSHBUTTON      "2",IDC_2,27,0,13,13
+    PUSHBUTTON      "3",IDC_3,41,0,13,13
+    PUSHBUTTON      "4",IDC_4,55,0,13,13
+    PUSHBUTTON      "5",IDC_5,69,0,13,13
+    PUSHBUTTON      "6",IDC_6,83,0,13,13
+    PUSHBUTTON      "7",IDC_7,97,0,13,13
+    PUSHBUTTON      "8",IDC_8,110,0,13,13
+    PUSHBUTTON      "9",IDC_9,123,0,13,13
+    PUSHBUTTON      "0",IDC_0,136,0,13,13
+    PUSHBUTTON      "-",IDC_jianhao,149,0,13,13
+    PUSHBUTTON      "=",IDC_denghao,162,0,13,13
+    PUSHBUTTON      "BACK",IDC_BACK,177,0,24,13
+    PUSHBUTTON      "Tab",IDC_Tab,0,13,23,13
+    PUSHBUTTON      "Q",IDC_Q,23,13,13,13
+    PUSHBUTTON      "W",IDC_W,36,13,13,13
+    PUSHBUTTON      "E",IDC_E,50,13,13,13
+    PUSHBUTTON      "R",IDC_R,63,13,13,13
+    PUSHBUTTON      "T",IDC_T,77,13,13,13
+    PUSHBUTTON      "I",IDC_I,118,13,13,13
+    PUSHBUTTON      "O",IDC_O,132,13,13,13
+    PUSHBUTTON      "O",IDC_P,146,13,13,13
+    PUSHBUTTON      "[",IDC_dakuohao1,160,13,12,13
+    PUSHBUTTON      "]",IDC_dakuohao2,172,13,13,13
+    PUSHBUTTON      "\\",IDC_xiegan,188,13,13,13
+    PUSHBUTTON      "Y",IDC_Y,91,13,13,13
+    PUSHBUTTON      "U",IDC_U,105,13,13,13
+    PUSHBUTTON      "A",IDC_A,27,26,13,13
+    PUSHBUTTON      "S",IDC_S,40,26,13,13
+    PUSHBUTTON      "D",IDC_D,54,26,13,13
+    PUSHBUTTON      "F",IDC_F,68,26,13,13
+    PUSHBUTTON      "G",IDC_G,82,26,13,13
+    PUSHBUTTON      "K",IDC_K,122,26,13,13
+    PUSHBUTTON      ";",IDC_maohao,149,26,13,13
+    PUSHBUTTON      ",",IDC_dianhao,163,26,13,13
+    PUSHBUTTON      "L",IDC_L,136,26,13,13
+    PUSHBUTTON      "H",IDC_H,96,26,13,13
+    PUSHBUTTON      "J",IDC_J,109,26,13,13
+    PUSHBUTTON      "Caps",IDC_Caps,0,26,27,13
+    PUSHBUTTON      "Enter",IDC_ENTER,179,26,22,13
+    PUSHBUTTON      "Z",IDC_Z,34,39,13,13
+    PUSHBUTTON      "X",IDC_X,47,39,13,13
+    PUSHBUTTON      "C",IDC_C,60,39,13,13
+    PUSHBUTTON      "V",IDC_V,73,39,13,13
+    PUSHBUTTON      "B",IDC_B,86,39,13,13
+    PUSHBUTTON      ",",IDC_douhao,127,39,13,13
+    PUSHBUTTON      ".",IDC_dot,141,39,13,13
+    PUSHBUTTON      "/",IDC_xiejiang2,155,39,13,13
+    PUSHBUTTON      "N",IDC_N,99,39,13,13
+    PUSHBUTTON      "M",IDC_M,113,39,13,13
+    PUSHBUTTON      "Shitf",IDC_LSHIFT,1,39,32,13
+    PUSHBUTTON      "Ins",IDC_Ins,0,53,24,13
+    PUSHBUTTON      "Del",IDC_Del,35,53,26,13
+    PUSHBUTTON      "",IDC_SPACE,61,52,102,14
+    PUSHBUTTON      "Esc",IDC_Esc,171,53,25,13
+END
+
+IDD_SETUSUAL DIALOGEX 0, 0, 255, 247
+STYLE DS_MODALFRAME | WS_POPUP
+EXSTYLE WS_EX_NOPARENTNOTIFY | WS_EX_CONTEXTHELP
+FONT 9, "新宋体", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "状态初始化",IDC_STATIC,8,7,239,56
+    CONTROL         "中文",IDC_Chinese,"Button",BS_AUTORADIOBUTTON,38,23,32,
+                    10
+    CONTROL         "英文",IDC_English,"Button",BS_AUTORADIOBUTTON,106,25,32,
+                    10
+    CONTROL         "全角",IDC_Quanjiao,"Button",BS_AUTORADIOBUTTON,37,37,32,
+                    10
+    CONTROL         "半角",IDC_Banjiao,"Button",BS_AUTORADIOBUTTON,105,36,32,
+                    10
+    CONTROL         "中文标点",IDC_Chiesedot,"Button",BS_AUTORADIOBUTTON,37,
+                    49,48,10
+    CONTROL         "英语标点",IDC_Englishdot,"Button",BS_AUTORADIOBUTTON,
+                    105,50,48,10
+    GROUPBOX        "候选字",IDC_STATIC,7,73,240,36
+    LTEXT           "候选字数：",IDC_STATIC,29,91,41,11
+    CONTROL         "开启鼠标跟随",IDC_IsMouseFollow,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,123,64,10
+    COMBOBOX        IDC_CMB_PAGENUM,74,87,56,57,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SETVIEW DIALOG DISCARDABLE  0, 0, 255, 247
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "新宋体"
+BEGIN
+    LTEXT           "中文字体：",IDC_STATIC,11,26,48,11
+    GROUPBOX        "字体设置",IDC_STATIC,5,10,137,86
+    LTEXT           "字体颜色：",IDC_STATIC,11,48,42,9
+    CONTROL         "Slider1",IDC_SLI_OPT,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,47,109,148,15
+    CONTROL         "使用皮肤",IDC_CHK_SKIN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,153,48,10
+    COMBOBOX        IDC_SKIN,138,150,88,81,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "选择皮肤：",IDC_STATIC,86,153,41,8
+    LTEXT           "透明度：",IDC_STATIC,11,114,33,8
+    EDITTEXT        IDC_EDT_OPT,201,111,31,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "选择",IDC_BTN_CHOSECOLOR,74,45,50,14
+    PUSHBUTTON      "设置字体",IDC_BTN_SETFONT,74,23,50,14
+    GROUPBOX        "",IDC_STATIC,4,138,245,94
+    GROUPBOX        "预览",IDC_STATIC,146,10,104,86
+    GROUPBOX        "",IDC_STATIC,4,99,245,31
+    LTEXT           "背景颜色：",IDC_STATIC,11,73,41,8
+    PUSHBUTTON      "选择颜色",IDC_BTN_SETBGCOLOR,74,71,50,14
+    GROUPBOX        "",IDC_PREVIEW,11,167,229,58,BS_BITMAP
+END
+
+IDD_SETCIKU DIALOG DISCARDABLE  0, 0, 255, 108
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "新宋体"
+BEGIN
+    GROUPBOX        "词库管理",IDC_STATIC,6,7,242,87
+    PUSHBUTTON      "导入文本词库",IDC_BUTTON1,11,31,58,14
+    PUSHBUTTON      "导出文本词库",IDC_BUTTON2,11,64,58,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SETKEY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+    END
+
+    IDD_SOFTKETBOARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        TOPMARGIN, 7
+    END
+
+    IDD_SETUSUAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SETUSUAL DLGINIT
+BEGIN
+    IDC_CMB_PAGENUM, 0x403, 2, 0
+0x0034, 
+    IDC_CMB_PAGENUM, 0x403, 2, 0
+0x0035, 
+    IDC_CMB_PAGENUM, 0x403, 2, 0
+0x0036, 
+    IDC_CMB_PAGENUM, 0x403, 2, 0
+0x0037, 
+    IDC_CMB_PAGENUM, 0x403, 2, 0
+0x0038, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "NewIme.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_EXIT                "退出输入法"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_NEWIME              "NEWIME"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
