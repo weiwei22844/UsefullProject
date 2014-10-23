@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EasyLaser", "EasyLaser\EasyLaser.vcproj", "{3AA179DA-1929-43A0-BD53-535162F8A89B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD04442C-A08A-4D88-AE4C-F837E614C298} = {BD04442C-A08A-4D88-AE4C-F837E614C298}
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E} = {AC221D8F-C0C8-4D80-9505-AF8891E8464E}
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670} = {17C7BBA1-C51A-45AA-A416-7F975B9C0670}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dxflib-2.2.0.0-1", "dxflib\src\dxflib.vcproj", "{AC221D8F-C0C8-4D80-9505-AF8891E8464E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EasyLaserLib", "EasyLaserLib\Src\EasyLaserLib.vcproj", "{BD04442C-A08A-4D88-AE4C-F837E614C298}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E} = {AC221D8F-C0C8-4D80-9505-AF8891E8464E}
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670} = {17C7BBA1-C51A-45AA-A416-7F975B9C0670}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fparser", "fparser\src\fparser.vcproj", "{17C7BBA1-C51A-45AA-A416-7F975B9C0670}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Unicode Debug|Win32 = Unicode Debug|Win32
+		Unicode Release|Win32 = Unicode Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AA179DA-1929-43A0-BD53-535162F8A89B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3AA179DA-1929-43A0-BD53-535162F8A89B}.Debug|Win32.Build.0 = Debug|Win32
+		{3AA179DA-1929-43A0-BD53-535162F8A89B}.Release|Win32.ActiveCfg = Release|Win32
+		{3AA179DA-1929-43A0-BD53-535162F8A89B}.Release|Win32.Build.0 = Release|Win32
+		{3AA179DA-1929-43A0-BD53-535162F8A89B}.Unicode Debug|Win32.ActiveCfg = Unicode Debug|Win32
+		{3AA179DA-1929-43A0-BD53-535162F8A89B}.Unicode Debug|Win32.Build.0 = Unicode Debug|Win32
+		{3AA179DA-1929-43A0-BD53-535162F8A89B}.Unicode Release|Win32.ActiveCfg = Unicode Release|Win32
+		{3AA179DA-1929-43A0-BD53-535162F8A89B}.Unicode Release|Win32.Build.0 = Unicode Release|Win32
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E}.Debug|Win32.Build.0 = Debug|Win32
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E}.Release|Win32.ActiveCfg = Release|Win32
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E}.Release|Win32.Build.0 = Release|Win32
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E}.Unicode Debug|Win32.ActiveCfg = Unicode Debug|Win32
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E}.Unicode Debug|Win32.Build.0 = Unicode Debug|Win32
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E}.Unicode Release|Win32.ActiveCfg = Unicode Release|Win32
+		{AC221D8F-C0C8-4D80-9505-AF8891E8464E}.Unicode Release|Win32.Build.0 = Unicode Release|Win32
+		{BD04442C-A08A-4D88-AE4C-F837E614C298}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BD04442C-A08A-4D88-AE4C-F837E614C298}.Debug|Win32.Build.0 = Debug|Win32
+		{BD04442C-A08A-4D88-AE4C-F837E614C298}.Release|Win32.ActiveCfg = Release|Win32
+		{BD04442C-A08A-4D88-AE4C-F837E614C298}.Release|Win32.Build.0 = Release|Win32
+		{BD04442C-A08A-4D88-AE4C-F837E614C298}.Unicode Debug|Win32.ActiveCfg = Unicode Debug|Win32
+		{BD04442C-A08A-4D88-AE4C-F837E614C298}.Unicode Debug|Win32.Build.0 = Unicode Debug|Win32
+		{BD04442C-A08A-4D88-AE4C-F837E614C298}.Unicode Release|Win32.ActiveCfg = Unicode Release|Win32
+		{BD04442C-A08A-4D88-AE4C-F837E614C298}.Unicode Release|Win32.Build.0 = Unicode Release|Win32
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670}.Debug|Win32.ActiveCfg = Debug|Win32
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670}.Debug|Win32.Build.0 = Debug|Win32
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670}.Release|Win32.ActiveCfg = Release|Win32
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670}.Release|Win32.Build.0 = Release|Win32
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670}.Unicode Debug|Win32.ActiveCfg = Unicode Debug|Win32
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670}.Unicode Debug|Win32.Build.0 = Unicode Debug|Win32
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670}.Unicode Release|Win32.ActiveCfg = Unicode Release|Win32
+		{17C7BBA1-C51A-45AA-A416-7F975B9C0670}.Unicode Release|Win32.Build.0 = Unicode Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
