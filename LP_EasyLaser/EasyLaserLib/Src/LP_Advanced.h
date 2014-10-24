@@ -209,6 +209,94 @@ public:
 private:
 	bool isempty;
 };
+// added by ZWW
+#define		MAX_DIMSTYLES	64
+#define		MAX_LAYERS		128
+#define		MAX_LTYPES		128
+#define		MAX_STYLES		128
+
+typedef unsigned int UINT;
+
+// Tables Structures *******************************************
+/*typedef struct tag_LTYPE {
+    OBJHANDLE Objhandle;			// Handle
+    string	name;		            // Line Type Name
+    char	StandardFlags;			// Standard flags
+    char	DescriptiveText[512];	// Descriptive Text
+    short	ElementsNumber;			// Line Elements Number
+    double	Elements[30];			// Line Elements (Max=30)
+    double	PatternLength;          // Length of linetype pattern
+} LTYPE, *PLTYPE;*/
+typedef struct tag_LTYPE {
+    string name;
+    int flags;
+}LTYPE, *PLTYPE;
+
+typedef struct tag_LAYER {
+    //OBJHANDLE Objhandle;			// Handle
+    string	name;		            // Layer Name
+    char	StandardFlags;			// Standard flags
+    short	Color; 					// Layer Color (if negative, layer is Off)
+    //OBJHANDLE LineTypeObjhandle;	// Handle of linetype for this layer
+    short	LineWeight;				// Layer's Line Weight                      (*2000*)
+    bool	PlotFlag;				// TRUE=Plot this layer                     (*2000*)
+    //OBJHANDLE PlotStyleObjhandle;	// handle of PlotStyleName object           (*2000*)
+} LAYER, *PLAYER;
+
+typedef struct tag_STYLE {
+    string	name;		            // Style Name
+    int	    flags;			        // Standard flag values -> 4=Vertical text
+    double fixedTextHeight;
+    double widthFactor;
+    double obliqueAngle;
+    int textGenerationFlags;
+    double lastHeightUsed;
+    string primaryFontFile;
+    string bigFontFile;
+} STYLE, *PSTYLE;
+
+typedef struct tag_DIMSTYLE {
+    //OBJHANDLE Objhandle;			// Handle
+    string	name;		            // name of dimension style
+    char	StandardFlags;			// Standard flag values
+    double	dimasz;					// Arrow size
+    char	dimblk1[16];			// 1st Arrow head
+    char	dimblk2[16];			// 2nd Arrow head
+    short	dimclrd;				// Dimension line & Arrow heads color
+    short	dimclre;				// Extension line color
+    short	dimclrt;				// Text color
+    double	dimdle;					// Dimension line size after Extensionline
+    double	dimexe;					// Extension line size after Dimline
+    double	dimexo;					// Offset from origin
+    double	dimgap;					// Offset from dimension line
+    double	dimtxt;					// Text height
+    char	dimtad;					// Vertical Text Placement
+    //OBJHANDLE dimtxstyObjhandle;	// Text style handle
+} DIMSTYLE, *PDIMSTYLE;
+
+typedef struct tag_TABLES
+{
+    /*LTYPE		LType[MAX_LTYPES];
+    LAYER		Layer[MAX_LAYERS];
+    STYLE		Style[MAX_STYLES];
+    DIMSTYLE	DimStyle[MAX_DIMSTYLES];*/
+    vector <DL_LineTypeData> LTypes;
+    vector <LAYER> Layers;
+    vector <DL_StyleData> Styles;
+    vector <DIMSTYLE> DimStyles;
+
+    UINT		NumLayers;
+    UINT		NumLTypes;
+    UINT		NumStyles;
+    UINT		NumDimStyles;
+
+    UINT		CurrentLayer;
+    UINT		CurrentLType;
+    UINT		CurrentStyle;
+    UINT		CurrentDimStyle;
+} TABLES, *PTABLES;
+// end added by ZWW
+
 class LP_Graphics_Container {
 public:
 	vector <LP_Layer>& getGraphics();
@@ -226,6 +314,9 @@ public:
 	void getTrack(vector<LP_CAM_Group>& camgp);
 	void Draw(wxDC * dc, LP_Coordinate &cod);
 public:
+    // added by ZWW
+    TABLES		Tables;
+    // end added
 	vector <LP_Layer> layers;
 	vector <LP_Block> blocks;
 	LP_Rect rect;

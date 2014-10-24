@@ -139,6 +139,7 @@ void LP_Line::Draw(wxDC * dc, LP_Coordinate &cod){
 	if(tabf){
 		int colorindex = Attributes.getColor();
 		//	if(colorindex == 7){colorindex = 0;}
+        if(colorindex == 256){colorindex = 255;}// added by ZWW
 		wxPen pen(wxColor(dxfColors[colorindex][0] * 255,dxfColors[colorindex][1] * 255,dxfColors[colorindex][2] * 255));
 		dc->SetPen(pen);
 		if(getPick())

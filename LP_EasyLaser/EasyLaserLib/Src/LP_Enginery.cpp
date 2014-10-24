@@ -1,7 +1,6 @@
 #include <math.h>
 #include "LP_Enginery.h"
 #include "LP_Graph.h"
-//#include <wx/dc.h>        // comment by ZWW
 #define	MINSTEPSPACE 1.0e-6           //在单轴方向上的最小单步进给距离
 #define MAXSTEPSPACE 1.0              //在单轴方向上的最大单步进给距离
 

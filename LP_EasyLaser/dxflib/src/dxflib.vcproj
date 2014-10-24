@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="dxflib-2.2.0.0-1"
+	Name="dxflib"
 	ProjectGUID="{AC221D8F-C0C8-4D80-9505-AF8891E8464E}"
-	RootNamespace="dxflib-2.2.0.0-1"
+	RootNamespace="dxflib"
 	Keyword="ManagedCProj"
 	TargetFrameworkVersion="0"
 	>

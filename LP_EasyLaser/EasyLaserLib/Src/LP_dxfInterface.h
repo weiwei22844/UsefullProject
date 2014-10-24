@@ -26,6 +26,7 @@ class LP_dxfInterface :
 
 public:
     LP_dxfInterface(LP_Graphics_Container& tgraph) {
+        pTables = &(tgraph.Tables);
 		layers = &(tgraph.getGraphics());
 		blocks = &(tgraph.blocks);
 		currentspline = NULL;
@@ -116,7 +117,8 @@ public:
 	void addLine(const DL_LineData& data) {
 		setLayer(this->attributes.getLayer());
 		LP_Line dxline(data.x1, data.y1, data.z1, data.x2, data.y2, data.z2);
-		dxline.setAttributes(currentlayer->getAttributes());
+		//dxline.setAttributes(currentlayer->getAttributes());
+        dxline.setAttributes(attributes);               // modified by ZWW
 		if(actionstack.empty() == false){
 			if(actionstack.back() == ACTION_BLOCK){
 				if(currentblock.empty() == false){
@@ -324,6 +326,18 @@ public:
 		}
 	}
 
+    // added by ZWW
+    void addTextStyle(const DL_StyleData& data) {
+        DL_StyleData style(data.name, data.flags, data.fixedTextHeight, data.widthFactor, data.obliqueAngle, data.textGenerationFlags, data.lastHeightUsed, data.primaryFontFile, data.bigFontFile);
+        pTables->Styles.push_back(style);
+    }
+
+    void addLineType(const DL_LineTypeData& data){
+        DL_LineTypeData lineType(data.name, data.flags);
+        pTables->LTypes.push_back(lineType);
+    }
+    // end added
+
     /**
      * Called for additional text chunks for MTEXT entities.
      * The chunks come at 250 character in size each. Note that 
@@ -464,7 +478,9 @@ public:
     DL_Extrusion* getExtrusion() {
         return extrusion;
     }
+
 public:
+    TABLES*		pTables;
 	vector<LP_Layer>* layers;
 	vector<LP_Block>* blocks;
 protected:
