@@ -15,6 +15,11 @@ public:
 	CMainSysDlg(CWnd* pParent = NULL);	// 标准构造函数
 
     void ProcessMail(_bstr_t mailBody);
+    int startServer();
+
+    BOOL m_bListening;
+    SOCKET m_sListen;
+    BOOL m_bProcessCur;
 
 // 对话框数据
 	enum { IDD = IDD_MAINSYS_DIALOG };

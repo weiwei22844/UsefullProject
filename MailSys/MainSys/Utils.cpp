@@ -25,9 +25,11 @@ CString CUtils::GetIPAddress()
     char chIP[64]={0}; 
 	CString strPath;
 	char *pData = NULL;
-	strPath = GetExePath() + _T("//netip.ini");   
+    CString strTemp = _T("");
+	strPath = GetExePath() + _T("netip.ini");   
 	//URLDownloadToFile(0,_T("http://www.ip138.com/ip2city.asp"),strPath,0,NULL);
-	URLDownloadToFile(0,_T("http://iframe.ip138.com/ic.asp"),strPath,0,NULL);
+	if(URLDownloadToFile(0,_T("http://iframe.ip138.com/ic.asp"),strPath,0,NULL) != S_OK)
+        return strTemp;
 
 	/*FILE *fp=fopen( strPath, "r" );   
 	if ( fp != NULL )    
@@ -79,7 +81,7 @@ CString CUtils::GetIPAddress()
 					    }
 				    }
 			    }
-			    delete pData;
+			    free(pData);
 		    }
 		    file.Close();
         }
@@ -108,7 +110,7 @@ CString CUtils::GetIPAddress()
 		e->Delete();
 	}*/
 	DeleteFile(strPath);
-	CString strTemp=_T("");
+	
 	if(chIP != "")
 	{
 		strTemp.Format(_T("%S"),chIP);

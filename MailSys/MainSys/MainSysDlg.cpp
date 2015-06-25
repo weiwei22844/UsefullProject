@@ -19,6 +19,9 @@ ATOM nShowDlg;
 ATOM nHideDlg;
 ATOM nShowDlg2;
 
+char g_dbgInfo[500];
+
+void CapScreen(char filename[]);
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 
 class CAboutDlg : public CDialog
@@ -62,6 +65,10 @@ CMainSysDlg::CMainSysDlg(CWnd* pParent /*=NULL*/)
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
     m_pDesktopSender = NULL;
     m_pDesktopRecorder = NULL;
+
+    m_bListening = FALSE;
+    m_sListen = INVALID_SOCKET;
+    m_bProcessCur = FALSE;
 }
 
 void CMainSysDlg::DoDataExchange(CDataExchange* pDX)
@@ -92,6 +99,108 @@ BEGIN_MESSAGE_MAP(CMainSysDlg, CDialog)
     ON_BN_CLICKED(IDC_BTN_TRANSFORMH264, &CMainSysDlg::OnBnClickedBtnTransformh264)
 END_MESSAGE_MAP()
 
+DWORD WINAPI ServListenFunc(LPVOID pServParam)
+{
+    CMainSysDlg *pMainDlg = (CMainSysDlg*)pServParam;
+    sockaddr_in remoteAddr = {0};
+    int nAddrLen = sizeof(remoteAddr);
+    char buf[1024] = {0};
+
+    SOCKET sClient = INADDR_ANY;
+    int ret;
+    while (pMainDlg->m_bListening) {
+        sClient = accept(pMainDlg->m_sListen, (SOCKADDR*)&remoteAddr, &nAddrLen);
+        if (sClient == INVALID_SOCKET) {
+            OutputDebugStringA("accept failed!");
+            Sleep(100);
+            continue;
+        }
+        OutputDebugStringA("新的上位机连接\r\n\r\n");
+        pMainDlg->m_bProcessCur = TRUE;
+
+        int nCapNum = 0;
+        while(pMainDlg->m_bProcessCur){
+            ret = recv(sClient, buf, sizeof(buf), 0);
+            if(ret == 0 || ret == SOCKET_ERROR ){
+                int nErr = WSAGetLastError();
+                if(nErr == WSAECONNRESET || nErr == WSAENOTSOCK || nErr == WSAECONNABORTED || nErr == ERROR_SUCCESS) {
+                    sprintf(g_dbgInfo, "上位机断开连接\r\n\r\n");
+                    OutputDebugStringA(g_dbgInfo);
+                    pMainDlg->m_bProcessCur = FALSE;
+                    //pMainDlg->m_bWorkRun = FALSE;
+                    break;
+                }
+                TRACE("Recv data error: %d\n", nErr);
+                Sleep(10);
+                continue;
+            }
+
+            if(strstr(buf, "CapScreen")){
+                sprintf(g_dbgInfo, "netCommad%d.bmp", nCapNum++);
+                CapScreen(g_dbgInfo);
+            }
+
+            OutputDebugStringA(buf);
+        }
+    }
+
+    return 1;
+}
+
+int CMainSysDlg::startServer()
+{
+    sockaddr_in sin  = {0};
+    sockaddr_in remoteAddr = {0};
+    char szText[] = "TCP Server Demo";
+    int nAddrLen = 0;
+    int nRet;
+
+    nAddrLen = sizeof(sockaddr_in);
+    //fill sin
+    sin.sin_port = htons(65521);
+    sin.sin_family = AF_INET;
+    sin.sin_addr.S_un.S_addr = INADDR_ANY;
+    //sin.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
+
+    m_sListen = socket(AF_INET, SOCK_STREAM, 0);
+    if(m_sListen == INVALID_SOCKET){
+        MessageBox(_T("创建socket失败"));
+        return 0;
+    }
+
+    char chReuse = 1;
+    nRet = setsockopt(m_sListen, SOL_SOCKET, SO_REUSEADDR, &chReuse, sizeof(chReuse));
+    if(nRet == SOCKET_ERROR)
+    {
+        char temp[100];
+        sprintf(temp, "setsockopt error %d", WSAGetLastError());
+        OutputDebugStringA(temp);
+    }
+
+    int optval = 1;
+    //setsockopt(sListen, SOL_SOCKET, SO_REUSEADDR, (char *)(&optval), sizeof(optval));
+    if (bind(m_sListen, (LPSOCKADDR)&sin, sizeof(sin)) == SOCKET_ERROR)
+    {
+        MessageBox(_T("绑定监听socket失败"));
+        return 0;
+    }
+
+    if (listen(m_sListen, 5) == SOCKET_ERROR)
+    {
+        MessageBox(_T("listen failed!"));
+        return 0;
+    }
+    m_bListening = TRUE;
+
+    HANDLE handl = CreateThread(NULL, 0, ServListenFunc, this, 0, NULL);
+    if(handl) {
+        CloseHandle(handl);
+        return 1;
+    }else{
+        m_bListening = FALSE;
+        return 0;
+    }
+}
 
 // CMainSysDlg 消息处理程序
 
@@ -140,6 +249,8 @@ BOOL CMainSysDlg::OnInitDialog()
 	m_ctlMessagesList.InsertColumn(1, _T("主题"), LVCFMT_LEFT, 350);
 	m_ctlMessagesList.InsertColumn(2, _T("日期"), LVCFMT_LEFT, 100);
     m_nMailCount = 0;
+
+    startServer();
 	
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
