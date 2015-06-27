@@ -157,7 +157,11 @@ int CMainSysDlg::startServer()
 
     nAddrLen = sizeof(sockaddr_in);
     //fill sin
-    sin.sin_port = htons(65521);
+#if 0
+    sin.sin_port = htons(65521);			// 公司
+#else
+	sin.sin_port = htons(555);			// 龙锦东四
+#endif
     sin.sin_family = AF_INET;
     sin.sin_addr.S_un.S_addr = INADDR_ANY;
     //sin.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");

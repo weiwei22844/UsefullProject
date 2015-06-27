@@ -1,0 +1,1728 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 15.00.30729.01 (a3a2458c).
+//
+// c:\users\lenovo\documents\github\usefullproject\mailsys\debug\jmail.tlh
+//
+// C++ source equivalent of Win32 type library jmail.dll
+// compiler-generated file created 06/27/15 at 16:33:47 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace jmail {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("aed3a6b0-2171-11d2-b77c-0008c73aca8f"))
+/* LIBID */ __jmail;
+struct __declspec(uuid("607a06fe-2fda-4adc-854d-d016d98d83db"))
+/* dual interface */ IPOP3;
+struct /* coclass */ POP3;
+struct __declspec(uuid("684130b2-2b8a-4e8d-be71-8f4052882076"))
+/* dual interface */ IMessages;
+struct /* coclass */ Messages;
+struct __declspec(uuid("3a037057-57f0-4904-a1e0-ad0ea2fb564e"))
+/* dual interface */ IMessage;
+struct /* coclass */ Message;
+struct __declspec(uuid("cf2ed965-e0ba-4fe4-ade2-38bd48f112e8"))
+/* dual interface */ IHeaders;
+struct /* coclass */ Headers;
+struct __declspec(uuid("56930358-ad72-408f-83c4-a2b0dc8037b2"))
+/* dual interface */ IRecipients;
+struct /* coclass */ Recipients;
+struct __declspec(uuid("65c53be7-ed21-4c25-b189-da0e8fad5231"))
+/* dual interface */ IRecipient;
+struct /* coclass */ Recipient;
+struct __declspec(uuid("1e6d8684-755d-4847-bf40-68ec5e4bc1e9"))
+/* dual interface */ IAttachments;
+struct /* coclass */ Attachments;
+struct __declspec(uuid("952f0b99-50b6-44b3-ae0d-700d5b98b416"))
+/* dual interface */ IAttachment;
+struct /* coclass */ Attachment;
+struct __declspec(uuid("aed3a6b1-2171-11d2-b77c-0008c73aca8f"))
+/* dual interface */ ISMTPMail;
+struct /* coclass */ SMTPMail;
+struct __declspec(uuid("14e61a41-8846-11d2-b7e4-0008c73aca8f"))
+/* dual interface */ IPOP3Mail;
+struct /* coclass */ POP3Mail;
+struct __declspec(uuid("23e86816-772b-4b28-a924-a135cff6469a"))
+/* dual interface */ IPGPKeys;
+struct /* coclass */ PGPKeys;
+struct __declspec(uuid("b89d0e7a-0f5b-40ee-8af3-08fa2ed9534f"))
+/* dual interface */ IPGPKeyInfo;
+struct /* coclass */ PGPKeyInfo;
+struct __declspec(uuid("0c21b3b1-2b11-45f2-8a9e-dcc5032de98a"))
+/* dual interface */ IMailMerge;
+struct /* coclass */ MailMerge;
+struct __declspec(uuid("821aafe5-2f19-47eb-aca9-3b4c1d64ac27"))
+/* dual interface */ ISpeedMailer;
+struct /* coclass */ SpeedMailer;
+struct __declspec(uuid("e05aea1e-bcb1-473a-8b2a-4829d9e1ad23"))
+/* dual interface */ IPGPDecodeResult;
+struct /* coclass */ PGPDecodeResult;
+struct __declspec(uuid("08b9999c-dad2-4353-b25b-8ccaffca4d16"))
+/* dual interface */ IPGPDecodeResults;
+struct /* coclass */ PGPDecodeResults;
+struct __declspec(uuid("41dba1fa-44f6-4bd5-82df-1a7fdea0475d"))
+/* dual interface */ IPGPDecodeResultCollection;
+struct /* coclass */ PGPDecodeResultCollection;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IHeaders, __uuidof(IHeaders));
+_COM_SMARTPTR_TYPEDEF(IRecipient, __uuidof(IRecipient));
+_COM_SMARTPTR_TYPEDEF(IRecipients, __uuidof(IRecipients));
+_COM_SMARTPTR_TYPEDEF(IAttachment, __uuidof(IAttachment));
+_COM_SMARTPTR_TYPEDEF(IAttachments, __uuidof(IAttachments));
+_COM_SMARTPTR_TYPEDEF(IPOP3Mail, __uuidof(IPOP3Mail));
+_COM_SMARTPTR_TYPEDEF(IPGPKeyInfo, __uuidof(IPGPKeyInfo));
+_COM_SMARTPTR_TYPEDEF(IPGPKeys, __uuidof(IPGPKeys));
+_COM_SMARTPTR_TYPEDEF(ISpeedMailer, __uuidof(ISpeedMailer));
+_COM_SMARTPTR_TYPEDEF(IPGPDecodeResult, __uuidof(IPGPDecodeResult));
+_COM_SMARTPTR_TYPEDEF(IPGPDecodeResultCollection, __uuidof(IPGPDecodeResultCollection));
+_COM_SMARTPTR_TYPEDEF(IPGPDecodeResults, __uuidof(IPGPDecodeResults));
+_COM_SMARTPTR_TYPEDEF(IMessage, __uuidof(IMessage));
+_COM_SMARTPTR_TYPEDEF(IMessages, __uuidof(IMessages));
+_COM_SMARTPTR_TYPEDEF(IPOP3, __uuidof(IPOP3));
+_COM_SMARTPTR_TYPEDEF(ISMTPMail, __uuidof(ISMTPMail));
+_COM_SMARTPTR_TYPEDEF(IMailMerge, __uuidof(IMailMerge));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("f812b147-0e26-4222-8ee4-9f753cd2b39c"))
+POP3;
+    // [ default ] interface IPOP3
+
+struct __declspec(uuid("a62c8bdb-d1fc-4fdd-a2a2-eeff73262a41"))
+Messages;
+    // [ default ] interface IMessages
+
+struct __declspec(uuid("e5ff9f62-0e7c-4372-8ad5-da7d2418070c"))
+Message;
+    // [ default ] interface IMessage
+
+struct __declspec(uuid("cf2ed965-e0ba-4fe4-ade2-38bd48f112e8"))
+IHeaders : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetText))
+    _bstr_t Text;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetHeader (
+        _bstr_t Headername );
+    _bstr_t GetText ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_GetHeader (
+        /*[in]*/ BSTR Headername,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_Text (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+};
+
+struct __declspec(uuid("b1cc9084-0177-4136-9b1b-c06c061f1e1d"))
+Headers;
+    // [ default ] interface IHeaders
+
+struct __declspec(uuid("b10bf17c-f7ec-4ee2-ad7a-6f42816aec0f"))
+Recipients;
+    // [ default ] interface IRecipients
+
+struct __declspec(uuid("65c53be7-ed21-4c25-b189-da0e8fad5231"))
+IRecipient : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetEMail))
+    _bstr_t EMail;
+    __declspec(property(get=GetReType))
+    long ReType;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetName ( );
+    _bstr_t GetEMail ( );
+    long GetReType ( );
+    IRecipientPtr New (
+        _bstr_t Name,
+        _bstr_t EMail,
+        char recipientType );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Name (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_EMail (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_ReType (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_New (
+        /*[in]*/ BSTR Name,
+        /*[in]*/ BSTR EMail,
+        /*[in]*/ char recipientType,
+        /*[out,retval]*/ struct IRecipient * * Value ) = 0;
+};
+
+struct __declspec(uuid("56930358-ad72-408f-83c4-a2b0dc8037b2"))
+IRecipients : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    IRecipientPtr Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetCount ( );
+    IRecipientPtr GetItem (
+        long index );
+    HRESULT Add (
+        struct IRecipient * Value );
+    HRESULT Clear ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ long index,
+        /*[out,retval]*/ struct IRecipient * * Value ) = 0;
+      virtual HRESULT __stdcall raw_Add (
+        /*[in]*/ struct IRecipient * Value ) = 0;
+      virtual HRESULT __stdcall raw_Clear ( ) = 0;
+};
+
+struct __declspec(uuid("dbaaea4b-ad29-47bd-8776-c787d5be28aa"))
+Recipient;
+    // [ default ] interface IRecipient
+
+struct __declspec(uuid("b3a0acb9-3d8c-4999-9e6b-3e44372e11dd"))
+Attachments;
+    // [ default ] interface IAttachments
+
+struct __declspec(uuid("952f0b99-50b6-44b3-ae0d-700d5b98b416"))
+IAttachment : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetSize))
+    long Size;
+    __declspec(property(get=GetContentType))
+    _bstr_t ContentType;
+    __declspec(property(get=GetData,put=PutData))
+    _bstr_t Data;
+    __declspec(property(get=GetisInline,put=PutisInline))
+    VARIANT_BOOL isInline;
+    __declspec(property(get=GetBinaryData,put=PutBinaryData))
+    _bstr_t BinaryData;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetName ( );
+    long GetSize ( );
+    _bstr_t GetContentType ( );
+    HRESULT SaveToFile (
+        _bstr_t FileName );
+    _bstr_t GetData ( );
+    void PutData (
+        _bstr_t Value );
+    IAttachmentPtr New (
+        _bstr_t FileName,
+        _bstr_t ContentType,
+        _bstr_t Data );
+    VARIANT_BOOL GetisInline ( );
+    void PutisInline (
+        VARIANT_BOOL Value );
+    _bstr_t GetBinaryData ( );
+    void PutBinaryData (
+        _bstr_t Value );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Name (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_Size (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_ContentType (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_SaveToFile (
+        /*[in]*/ BSTR FileName ) = 0;
+      virtual HRESULT __stdcall get_Data (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Data (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_New (
+        /*[in]*/ BSTR FileName,
+        /*[in]*/ BSTR ContentType,
+        /*[in]*/ BSTR Data,
+        /*[out,retval]*/ struct IAttachment * * Value ) = 0;
+      virtual HRESULT __stdcall get_isInline (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_isInline (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_BinaryData (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_BinaryData (
+        /*[in]*/ BSTR Value ) = 0;
+};
+
+struct __declspec(uuid("1e6d8684-755d-4847-bf40-68ec5e4bc1e9"))
+IAttachments : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    IAttachmentPtr Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetCount ( );
+    HRESULT Add (
+        struct IAttachment * * Attachment );
+    IAttachmentPtr GetItem (
+        long index );
+    HRESULT Clear ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_Add (
+        /*[in]*/ struct IAttachment * * Attachment ) = 0;
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ long index,
+        /*[out,retval]*/ struct IAttachment * * Value ) = 0;
+      virtual HRESULT __stdcall raw_Clear ( ) = 0;
+};
+
+struct __declspec(uuid("53deca78-c334-4235-9165-1fe7d8912a76"))
+Attachment;
+    // [ default ] interface IAttachment
+
+struct __declspec(uuid("aed3a6b3-2171-11d2-b77c-0008c73aca8f"))
+SMTPMail;
+    // [ default ] interface ISMTPMail
+
+struct __declspec(uuid("14e61a41-8846-11d2-b7e4-0008c73aca8f"))
+IPOP3Mail : IDispatch
+{};
+
+struct __declspec(uuid("14e61a43-8846-11d2-b7e4-0008c73aca8f"))
+POP3Mail;
+    // [ default ] interface IPOP3Mail
+
+struct __declspec(uuid("cef9ea1f-bbca-4e19-87a4-2e26c22f1d26"))
+PGPKeys;
+    // [ default ] interface IPGPKeys
+
+struct __declspec(uuid("b89d0e7a-0f5b-40ee-8af3-08fa2ed9534f"))
+IPGPKeyInfo : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetKeyUser))
+    _bstr_t KeyUser;
+    __declspec(property(get=GetKeyID))
+    _bstr_t KeyID;
+    __declspec(property(get=GetKeyCreationDate))
+    _bstr_t KeyCreationDate;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetKeyUser ( );
+    _bstr_t GetKeyID ( );
+    _bstr_t GetKeyCreationDate ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_KeyUser (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_KeyID (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_KeyCreationDate (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+};
+
+struct __declspec(uuid("23e86816-772b-4b28-a924-a135cff6469a"))
+IPGPKeys : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetItem))
+    IPGPKeyInfoPtr Item[];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetCount ( );
+    IPGPKeyInfoPtr GetItem (
+        long index );
+    HRESULT AddKey (
+        struct IPGPKeyInfo * key );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ long index,
+        /*[out,retval]*/ struct IPGPKeyInfo * * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddKey (
+        /*[in]*/ struct IPGPKeyInfo * key ) = 0;
+};
+
+struct __declspec(uuid("37f2ddbd-5cd9-4cdf-9b30-2a904246c112"))
+PGPKeyInfo;
+    // [ default ] interface IPGPKeyInfo
+
+struct __declspec(uuid("0d821067-fcf9-4704-9287-0d8f76fe6513"))
+MailMerge;
+    // [ default ] interface IMailMerge
+
+struct __declspec(uuid("821aafe5-2f19-47eb-aca9-3b4c1d64ac27"))
+ISpeedMailer : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT SendMail (
+        _bstr_t FromEMail,
+        _bstr_t RecipientEMails,
+        _bstr_t Subject,
+        _bstr_t Body,
+        _bstr_t MailServers );
+    HRESULT EnqueMail (
+        _bstr_t FromEMail,
+        _bstr_t RecipientEMails,
+        _bstr_t Subject,
+        _bstr_t Body,
+        _bstr_t MsPickupdirectory );
+    HRESULT SendXMLMail (
+        _bstr_t XML );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_SendMail (
+        /*[in]*/ BSTR FromEMail,
+        /*[in]*/ BSTR RecipientEMails,
+        /*[in]*/ BSTR Subject,
+        /*[in]*/ BSTR Body,
+        /*[in]*/ BSTR MailServers ) = 0;
+      virtual HRESULT __stdcall raw_EnqueMail (
+        /*[in]*/ BSTR FromEMail,
+        /*[in]*/ BSTR RecipientEMails,
+        /*[in]*/ BSTR Subject,
+        /*[in]*/ BSTR Body,
+        /*[in]*/ BSTR MsPickupdirectory ) = 0;
+      virtual HRESULT __stdcall raw_SendXMLMail (
+        /*[in]*/ BSTR XML ) = 0;
+};
+
+struct __declspec(uuid("90d0a753-ad45-40fd-8c6e-555600ee5eb4"))
+SpeedMailer;
+    // [ default ] interface ISpeedMailer
+
+struct __declspec(uuid("e05aea1e-bcb1-473a-8b2a-4829d9e1ad23"))
+IPGPDecodeResult : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetSigningUsed))
+    VARIANT_BOOL SigningUsed;
+    __declspec(property(get=GetSignatureGood))
+    VARIANT_BOOL SignatureGood;
+    __declspec(property(get=GetSuccess))
+    VARIANT_BOOL Success;
+    __declspec(property(get=GetPGPErrorCode))
+    long PGPErrorCode;
+    __declspec(property(get=GetPGPErrorMsg))
+    _bstr_t PGPErrorMsg;
+    __declspec(property(get=GetEncryptionUsed))
+    VARIANT_BOOL EncryptionUsed;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetSigningUsed ( );
+    VARIANT_BOOL GetSignatureGood ( );
+    VARIANT_BOOL GetSuccess ( );
+    long GetPGPErrorCode ( );
+    _bstr_t GetPGPErrorMsg ( );
+    VARIANT_BOOL GetEncryptionUsed ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_SigningUsed (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_SignatureGood (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_Success (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_PGPErrorCode (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_PGPErrorMsg (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_EncryptionUsed (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+};
+
+struct __declspec(uuid("81ca5571-c109-47ae-be1c-2df9cb8999ff"))
+PGPDecodeResult;
+    // [ default ] interface IPGPDecodeResult
+
+struct __declspec(uuid("ac3f1977-cd10-41b2-9977-7693a4c13377"))
+PGPDecodeResults;
+    // [ default ] interface IPGPDecodeResults
+
+struct __declspec(uuid("41dba1fa-44f6-4bd5-82df-1a7fdea0475d"))
+IPGPDecodeResultCollection : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetItem))
+    IPGPDecodeResultPtr Item[];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetCount ( );
+    IPGPDecodeResultPtr GetItem (
+        long index );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ long index,
+        /*[out,retval]*/ struct IPGPDecodeResult * * Value ) = 0;
+};
+
+struct __declspec(uuid("08b9999c-dad2-4353-b25b-8ccaffca4d16"))
+IPGPDecodeResults : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetBody))
+    IPGPDecodeResultPtr Body;
+    __declspec(property(get=GetHTMLBody))
+    IPGPDecodeResultPtr HTMLBody;
+    __declspec(property(get=GetAttachments))
+    IPGPDecodeResultCollectionPtr Attachments;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IPGPDecodeResultPtr GetBody ( );
+    IPGPDecodeResultPtr GetHTMLBody ( );
+    IPGPDecodeResultCollectionPtr GetAttachments ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Body (
+        /*[out,retval]*/ struct IPGPDecodeResult * * Value ) = 0;
+      virtual HRESULT __stdcall get_HTMLBody (
+        /*[out,retval]*/ struct IPGPDecodeResult * * Value ) = 0;
+      virtual HRESULT __stdcall get_Attachments (
+        /*[out,retval]*/ struct IPGPDecodeResultCollection * * Value ) = 0;
+};
+
+struct __declspec(uuid("3a037057-57f0-4904-a1e0-ad0ea2fb564e"))
+IMessage : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetBodyText))
+    _bstr_t BodyText;
+    __declspec(property(get=GetDate))
+    DATE Date;
+    __declspec(property(get=GetEnvelope,put=PutEnvelope))
+    IUnknownPtr Envelope;
+    __declspec(property(get=GetSize))
+    long Size;
+    __declspec(property(get=GetHeaders))
+    IHeadersPtr Headers;
+    __declspec(property(get=GetRecipients))
+    IRecipientsPtr Recipients;
+    __declspec(property(get=GetAttachments))
+    IAttachmentsPtr Attachments;
+    __declspec(property(get=GetReplyTo,put=PutReplyTo))
+    _bstr_t ReplyTo;
+    __declspec(property(get=GetText))
+    _bstr_t Text;
+    __declspec(property(get=GetHideRecipients,put=PutHideRecipients))
+    _bstr_t HideRecipients;
+    __declspec(property(get=GetMailDomain,put=PutMailDomain))
+    _bstr_t MailDomain;
+    __declspec(property(get=GetCharset,put=PutCharset))
+    _bstr_t Charset;
+    __declspec(property(get=GetContentTransferEncoding,put=PutContentTransferEncoding))
+    _bstr_t ContentTransferEncoding;
+    __declspec(property(get=GetMimeVersion,put=PutMimeVersion))
+    _bstr_t MimeVersion;
+    __declspec(property(get=GetEncoding,put=PutEncoding))
+    _bstr_t Encoding;
+    __declspec(property(get=GetReturnReceipt,put=PutReturnReceipt))
+    VARIANT_BOOL ReturnReceipt;
+    __declspec(property(get=GetSubject,put=PutSubject))
+    _bstr_t Subject;
+    __declspec(property(get=GetFrom,put=PutFrom))
+    _bstr_t From;
+    __declspec(property(get=GetFromName,put=PutFromName))
+    _bstr_t FromName;
+    __declspec(property(get=GetBody,put=PutBody))
+    _bstr_t Body;
+    __declspec(property(get=GetPriority,put=PutPriority))
+    unsigned char Priority;
+    __declspec(property(get=GetContentType,put=PutContentType))
+    _bstr_t ContentType;
+    __declspec(property(get=GetLog))
+    _bstr_t Log;
+    __declspec(property(get=GetLogging,put=PutLogging))
+    VARIANT_BOOL Logging;
+    __declspec(property(get=GetHTMLBody,put=PutHTMLBody))
+    _bstr_t HTMLBody;
+    __declspec(property(get=GetISOEncodeHeaders,put=PutISOEncodeHeaders))
+    VARIANT_BOOL ISOEncodeHeaders;
+    __declspec(property(get=GetUsePipelining,put=PutUsePipelining))
+    VARIANT_BOOL UsePipelining;
+    __declspec(property(get=GetSilent,put=PutSilent))
+    VARIANT_BOOL Silent;
+    __declspec(property(get=GetErrorCode))
+    long ErrorCode;
+    __declspec(property(get=GetErrorMessage))
+    _bstr_t ErrorMessage;
+    __declspec(property(get=GetErrorSource))
+    _bstr_t ErrorSource;
+    __declspec(property(get=GetSimpleLayout,put=PutSimpleLayout))
+    VARIANT_BOOL SimpleLayout;
+    __declspec(property(get=GetRecipientsString))
+    _bstr_t RecipientsString;
+    __declspec(property(get=GetDeferredDelivery,put=PutDeferredDelivery))
+    DATE DeferredDelivery;
+    __declspec(property(get=GetMailData))
+    _bstr_t MailData;
+    __declspec(property(get=GetAbout))
+    _bstr_t About;
+    __declspec(property(get=GetEncryptAttachments,put=PutEncryptAttachments))
+    VARIANT_BOOL EncryptAttachments;
+    __declspec(property(get=GetMsPickupdirectory,put=PutMsPickupdirectory))
+    _bstr_t MsPickupdirectory;
+    __declspec(property(get=GetPGPEncrypt,put=PutPGPEncrypt))
+    VARIANT_BOOL PGPEncrypt;
+    __declspec(property(get=GetPGPSign,put=PutPGPSign))
+    VARIANT_BOOL PGPSign;
+    __declspec(property(get=GetPGPPassphrase,put=PutPGPPassphrase))
+    _bstr_t PGPPassphrase;
+    __declspec(property(get=GetPGPSignkey,put=PutPGPSignkey))
+    _bstr_t PGPSignkey;
+    __declspec(property(get=GetVersion))
+    _bstr_t Version;
+    __declspec(property(get=GetMailServerUserName,put=PutMailServerUserName))
+    _bstr_t MailServerUserName;
+    __declspec(property(get=GetMailServerPassWord,put=PutMailServerPassWord))
+    _bstr_t MailServerPassWord;
+    __declspec(property(get=GetEnableCharsetTranslation,put=PutEnableCharsetTranslation))
+    VARIANT_BOOL EnableCharsetTranslation;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    DATE GetDate ( );
+    long GetSize ( );
+    HRESULT LoadFromStream (
+        IUnknown * Stream );
+    HRESULT SaveToStream (
+        IUnknown * Stream );
+    HRESULT ParseMessage (
+        _bstr_t MessageSource );
+    _bstr_t GetText ( );
+    IHeadersPtr GetHeaders ( );
+    IRecipientsPtr GetRecipients ( );
+    IAttachmentsPtr GetAttachments ( );
+    _bstr_t GetSubject ( );
+    void PutSubject (
+        _bstr_t Value );
+    _bstr_t GetFrom ( );
+    void PutFrom (
+        _bstr_t Value );
+    _bstr_t GetFromName ( );
+    void PutFromName (
+        _bstr_t Value );
+    _bstr_t GetBody ( );
+    void PutBody (
+        _bstr_t Value );
+    unsigned char GetPriority ( );
+    void PutPriority (
+        unsigned char Value );
+    _bstr_t GetContentType ( );
+    void PutContentType (
+        _bstr_t Value );
+    VARIANT_BOOL Send (
+        _bstr_t mailServer,
+        VARIANT_BOOL enque );
+    _bstr_t GetBodyText ( );
+    _bstr_t DecodeHeader (
+        _bstr_t Header );
+    HRESULT SendToNewsGroup (
+        _bstr_t ServerName,
+        _bstr_t Newsgroups );
+    IUnknownPtr GetEnvelope ( );
+    void PutEnvelope (
+        IUnknown * Value );
+    _bstr_t GetMsPickupdirectory ( );
+    void PutMsPickupdirectory (
+        _bstr_t Value );
+    HRESULT nq ( );
+    IPGPKeysPtr KeyInformation (
+        _bstr_t keyIdentifier );
+    VARIANT_BOOL GetPGPEncrypt ( );
+    void PutPGPEncrypt (
+        VARIANT_BOOL Value );
+    VARIANT_BOOL GetPGPSign ( );
+    void PutPGPSign (
+        VARIANT_BOOL Value );
+    _bstr_t GetPGPPassphrase ( );
+    void PutPGPPassphrase (
+        _bstr_t passPhrase );
+    _bstr_t GetPGPSignkey ( );
+    void PutPGPSignkey (
+        _bstr_t signKey );
+    _bstr_t GetReplyTo ( );
+    void PutReplyTo (
+        _bstr_t Value );
+    _bstr_t GetHideRecipients ( );
+    void PutHideRecipients (
+        _bstr_t Value );
+    _bstr_t GetMailDomain ( );
+    void PutMailDomain (
+        _bstr_t Value );
+    _bstr_t GetCharset ( );
+    void PutCharset (
+        _bstr_t Value );
+    _bstr_t GetContentTransferEncoding ( );
+    void PutContentTransferEncoding (
+        _bstr_t Value );
+    _bstr_t GetMimeVersion ( );
+    void PutMimeVersion (
+        _bstr_t Value );
+    _bstr_t GetEncoding ( );
+    void PutEncoding (
+        _bstr_t Value );
+    VARIANT_BOOL GetReturnReceipt ( );
+    void PutReturnReceipt (
+        VARIANT_BOOL Value );
+    HRESULT LogCustomMessage (
+        _bstr_t Message );
+    _bstr_t GetLog ( );
+    VARIANT_BOOL GetLogging ( );
+    void PutLogging (
+        VARIANT_BOOL Value );
+    _bstr_t GetHTMLBody ( );
+    void PutHTMLBody (
+        _bstr_t Value );
+    HRESULT Close ( );
+    VARIANT_BOOL GetISOEncodeHeaders ( );
+    void PutISOEncodeHeaders (
+        VARIANT_BOOL Value );
+    HRESULT ClearCustomHeaders ( );
+    VARIANT_BOOL GetUsePipelining ( );
+    void PutUsePipelining (
+        VARIANT_BOOL Value );
+    VARIANT_BOOL GetSilent ( );
+    void PutSilent (
+        VARIANT_BOOL Value );
+    long GetErrorCode ( );
+    _bstr_t GetErrorMessage ( );
+    _bstr_t GetErrorSource ( );
+    VARIANT_BOOL GetSimpleLayout ( );
+    void PutSimpleLayout (
+        VARIANT_BOOL Value );
+    HRESULT GetMessageBodyFromURL (
+        _bstr_t bstrURL,
+        _bstr_t bstrAuth );
+    _bstr_t AddURLAttachment (
+        _bstr_t bstrURL,
+        _bstr_t bstrAttachAs,
+        VARIANT_BOOL isInline,
+        _bstr_t bstrAuth );
+    HRESULT ExtractEmailAddressesFromURL (
+        _bstr_t bstrURL,
+        _bstr_t bstrAuth );
+    _bstr_t GetRecipientsString ( );
+    DATE GetDeferredDelivery ( );
+    void PutDeferredDelivery (
+        DATE Value );
+    _bstr_t GetMailData ( );
+    _bstr_t GetAbout ( );
+    HRESULT AddRecipient (
+        _bstr_t emailAddress,
+        _bstr_t recipientName,
+        _bstr_t PGPKey );
+    HRESULT AddRecipientCC (
+        _bstr_t emailAddress,
+        _bstr_t recipientName,
+        _bstr_t PGPKey );
+    HRESULT AddRecipientBCC (
+        _bstr_t emailAddress,
+        _bstr_t PGPKey );
+    _bstr_t GetVersion ( );
+    VARIANT_BOOL VerifyKeys (
+        _bstr_t keyString );
+    HRESULT ClearRecipients ( );
+    HRESULT ClearAttachments ( );
+    HRESULT AppendBodyFromFile (
+        _bstr_t FileName );
+    HRESULT AppendText (
+        _bstr_t Text );
+    _bstr_t AddAttachment (
+        _bstr_t FileName,
+        VARIANT_BOOL isInline,
+        _bstr_t ContentType );
+    _bstr_t AddCustomAttachment (
+        _bstr_t FileName,
+        _bstr_t Data,
+        VARIANT_BOOL isInline );
+    HRESULT AddHeader (
+        _bstr_t XHeader,
+        _bstr_t Value );
+    HRESULT AddNativeHeader (
+        _bstr_t Header,
+        _bstr_t Value );
+    VARIANT_BOOL GetEncryptAttachments ( );
+    void PutEncryptAttachments (
+        VARIANT_BOOL Value );
+    _bstr_t GetMailServerUserName ( );
+    void PutMailServerUserName (
+        _bstr_t Value );
+    _bstr_t GetMailServerPassWord ( );
+    void PutMailServerPassWord (
+        _bstr_t Value );
+    HRESULT Clear ( );
+    HRESULT AppendHTML (
+        _bstr_t Text );
+    IPGPDecodeResultsPtr PGPDecode (
+        VARIANT_BOOL DecodeBody,
+        VARIANT_BOOL DecodeAttachments );
+    VARIANT_BOOL GetEnableCharsetTranslation ( );
+    void PutEnableCharsetTranslation (
+        VARIANT_BOOL Value );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Date (
+        /*[out,retval]*/ DATE * Value ) = 0;
+      virtual HRESULT __stdcall get_Size (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_LoadFromStream (
+        /*[in]*/ IUnknown * Stream ) = 0;
+      virtual HRESULT __stdcall raw_SaveToStream (
+        /*[in]*/ IUnknown * Stream ) = 0;
+      virtual HRESULT __stdcall raw_ParseMessage (
+        /*[in]*/ BSTR MessageSource ) = 0;
+      virtual HRESULT __stdcall get_Text (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_Headers (
+        /*[out,retval]*/ struct IHeaders * * Value ) = 0;
+      virtual HRESULT __stdcall get_Recipients (
+        /*[out,retval]*/ struct IRecipients * * Value ) = 0;
+      virtual HRESULT __stdcall get_Attachments (
+        /*[out,retval]*/ struct IAttachments * * Value ) = 0;
+      virtual HRESULT __stdcall get_Subject (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Subject (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_From (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_From (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_FromName (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_FromName (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_Body (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Body (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_Priority (
+        /*[out,retval]*/ unsigned char * Value ) = 0;
+      virtual HRESULT __stdcall put_Priority (
+        /*[in]*/ unsigned char Value ) = 0;
+      virtual HRESULT __stdcall get_ContentType (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_ContentType (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_Send (
+        /*[in]*/ BSTR mailServer,
+        /*[in]*/ VARIANT_BOOL enque,
+        /*[out,retval]*/ VARIANT_BOOL * RetVal ) = 0;
+      virtual HRESULT __stdcall get_BodyText (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_DecodeHeader (
+        /*[in]*/ BSTR Header,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_SendToNewsGroup (
+        /*[in]*/ BSTR ServerName,
+        /*[in]*/ BSTR Newsgroups ) = 0;
+      virtual HRESULT __stdcall get_Envelope (
+        /*[out,retval]*/ IUnknown * * Value ) = 0;
+      virtual HRESULT __stdcall put_Envelope (
+        /*[in]*/ IUnknown * Value ) = 0;
+      virtual HRESULT __stdcall get_MsPickupdirectory (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_MsPickupdirectory (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_nq ( ) = 0;
+      virtual HRESULT __stdcall raw_KeyInformation (
+        /*[in]*/ BSTR keyIdentifier,
+        /*[out,retval]*/ struct IPGPKeys * * PGPKeys ) = 0;
+      virtual HRESULT __stdcall get_PGPEncrypt (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_PGPEncrypt (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_PGPSign (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_PGPSign (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_PGPPassphrase (
+        /*[out,retval]*/ BSTR * passPhrase ) = 0;
+      virtual HRESULT __stdcall put_PGPPassphrase (
+        /*[in]*/ BSTR passPhrase ) = 0;
+      virtual HRESULT __stdcall get_PGPSignkey (
+        /*[out,retval]*/ BSTR * signKey ) = 0;
+      virtual HRESULT __stdcall put_PGPSignkey (
+        /*[in]*/ BSTR signKey ) = 0;
+      virtual HRESULT __stdcall get_ReplyTo (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_ReplyTo (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_HideRecipients (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_HideRecipients (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_MailDomain (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_MailDomain (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_Charset (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Charset (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_ContentTransferEncoding (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_ContentTransferEncoding (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_MimeVersion (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_MimeVersion (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_Encoding (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Encoding (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_ReturnReceipt (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_ReturnReceipt (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall raw_LogCustomMessage (
+        /*[in]*/ BSTR Message ) = 0;
+      virtual HRESULT __stdcall get_Log (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_Logging (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_Logging (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_HTMLBody (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_HTMLBody (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_Close ( ) = 0;
+      virtual HRESULT __stdcall get_ISOEncodeHeaders (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_ISOEncodeHeaders (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall raw_ClearCustomHeaders ( ) = 0;
+      virtual HRESULT __stdcall get_UsePipelining (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_UsePipelining (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_Silent (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_Silent (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_ErrorCode (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_ErrorMessage (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_ErrorSource (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_SimpleLayout (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_SimpleLayout (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall raw_GetMessageBodyFromURL (
+        /*[in]*/ BSTR bstrURL,
+        /*[in]*/ BSTR bstrAuth ) = 0;
+      virtual HRESULT __stdcall raw_AddURLAttachment (
+        /*[in]*/ BSTR bstrURL,
+        /*[in]*/ BSTR bstrAttachAs,
+        /*[in]*/ VARIANT_BOOL isInline,
+        /*[in]*/ BSTR bstrAuth,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_ExtractEmailAddressesFromURL (
+        /*[in]*/ BSTR bstrURL,
+        /*[in]*/ BSTR bstrAuth ) = 0;
+      virtual HRESULT __stdcall get_RecipientsString (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_DeferredDelivery (
+        /*[out,retval]*/ DATE * Value ) = 0;
+      virtual HRESULT __stdcall put_DeferredDelivery (
+        /*[in]*/ DATE Value ) = 0;
+      virtual HRESULT __stdcall get_MailData (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_About (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddRecipient (
+        /*[in]*/ BSTR emailAddress,
+        /*[in]*/ BSTR recipientName,
+        /*[in]*/ BSTR PGPKey ) = 0;
+      virtual HRESULT __stdcall raw_AddRecipientCC (
+        /*[in]*/ BSTR emailAddress,
+        /*[in]*/ BSTR recipientName,
+        /*[in]*/ BSTR PGPKey ) = 0;
+      virtual HRESULT __stdcall raw_AddRecipientBCC (
+        /*[in]*/ BSTR emailAddress,
+        /*[in]*/ BSTR PGPKey ) = 0;
+      virtual HRESULT __stdcall get_Version (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_VerifyKeys (
+        /*[in]*/ BSTR keyString,
+        /*[out,retval]*/ VARIANT_BOOL * allOK ) = 0;
+      virtual HRESULT __stdcall raw_ClearRecipients ( ) = 0;
+      virtual HRESULT __stdcall raw_ClearAttachments ( ) = 0;
+      virtual HRESULT __stdcall raw_AppendBodyFromFile (
+        /*[in]*/ BSTR FileName ) = 0;
+      virtual HRESULT __stdcall raw_AppendText (
+        /*[in]*/ BSTR Text ) = 0;
+      virtual HRESULT __stdcall raw_AddAttachment (
+        /*[in]*/ BSTR FileName,
+        /*[in]*/ VARIANT_BOOL isInline,
+        /*[in]*/ BSTR ContentType,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddCustomAttachment (
+        /*[in]*/ BSTR FileName,
+        /*[in]*/ BSTR Data,
+        /*[in]*/ VARIANT_BOOL isInline,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddHeader (
+        /*[in]*/ BSTR XHeader,
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_AddNativeHeader (
+        /*[in]*/ BSTR Header,
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_EncryptAttachments (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_EncryptAttachments (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_MailServerUserName (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_MailServerUserName (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_MailServerPassWord (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_MailServerPassWord (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_Clear ( ) = 0;
+      virtual HRESULT __stdcall raw_AppendHTML (
+        /*[in]*/ BSTR Text ) = 0;
+      virtual HRESULT __stdcall raw_PGPDecode (
+        /*[in]*/ VARIANT_BOOL DecodeBody,
+        /*[in]*/ VARIANT_BOOL DecodeAttachments,
+        /*[out,retval]*/ struct IPGPDecodeResults * * RetVal ) = 0;
+      virtual HRESULT __stdcall get_EnableCharsetTranslation (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_EnableCharsetTranslation (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+};
+
+struct __declspec(uuid("684130b2-2b8a-4e8d-be71-8f4052882076"))
+IMessages : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem,put=PutItem))
+    IMessagePtr Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetCount ( );
+    HRESULT Clear ( );
+    IMessagePtr GetItem (
+        long index );
+    void PutItem (
+        long index,
+        struct IMessage * Value );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_Clear ( ) = 0;
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ long index,
+        /*[out,retval]*/ struct IMessage * * Value ) = 0;
+      virtual HRESULT __stdcall put_Item (
+        /*[in]*/ long index,
+        /*[in]*/ struct IMessage * Value ) = 0;
+};
+
+struct __declspec(uuid("607a06fe-2fda-4adc-854d-d016d98d83db"))
+IPOP3 : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetSize))
+    long Size;
+    __declspec(property(get=GetMessages))
+    IMessagesPtr Messages;
+    __declspec(property(get=GetLog))
+    _bstr_t Log;
+    __declspec(property(get=GetLogging,put=PutLogging))
+    VARIANT_BOOL Logging;
+    __declspec(property(get=GetTimeout,put=PutTimeout))
+    long Timeout;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Connect (
+        _bstr_t Username,
+        _bstr_t Password,
+        _bstr_t Server,
+        long Port );
+    HRESULT Disconnect ( );
+    _bstr_t GetLog ( );
+    VARIANT_BOOL GetLogging ( );
+    void PutLogging (
+        VARIANT_BOOL Log );
+    long GetCount ( );
+    long GetSize ( );
+    IMessagesPtr GetMessages ( );
+    long GetLastUnreadMessage ( );
+    HRESULT DownloadSingleHeader (
+        long MessageID );
+    HRESULT DeleteSingleMessage (
+        long MessageID );
+    HRESULT DownloadHeaders ( );
+    HRESULT DownloadMessages ( );
+    _bstr_t GetMessageUID (
+        long MessageID );
+    HRESULT DeleteMessages ( );
+    HRESULT DownloadUnreadMessages ( );
+    IMessagePtr DownloadSingleMessage (
+        long index );
+    long GetTimeout ( );
+    void PutTimeout (
+        long Value );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Connect (
+        /*[in]*/ BSTR Username,
+        /*[in]*/ BSTR Password,
+        /*[in]*/ BSTR Server,
+        long Port ) = 0;
+      virtual HRESULT __stdcall raw_Disconnect ( ) = 0;
+      virtual HRESULT __stdcall get_Log (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_Logging (
+        /*[out,retval]*/ VARIANT_BOOL * Log ) = 0;
+      virtual HRESULT __stdcall put_Logging (
+        /*[in]*/ VARIANT_BOOL Log ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Size (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Messages (
+        /*[out,retval]*/ struct IMessages * * Value ) = 0;
+      virtual HRESULT __stdcall raw_GetLastUnreadMessage (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_DownloadSingleHeader (
+        /*[in]*/ long MessageID ) = 0;
+      virtual HRESULT __stdcall raw_DeleteSingleMessage (
+        /*[in]*/ long MessageID ) = 0;
+      virtual HRESULT __stdcall raw_DownloadHeaders ( ) = 0;
+      virtual HRESULT __stdcall raw_DownloadMessages ( ) = 0;
+      virtual HRESULT __stdcall raw_GetMessageUID (
+        /*[in]*/ long MessageID,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_DeleteMessages ( ) = 0;
+      virtual HRESULT __stdcall raw_DownloadUnreadMessages ( ) = 0;
+      virtual HRESULT __stdcall raw_DownloadSingleMessage (
+        /*[in]*/ long index,
+        /*[out,retval]*/ struct IMessage * * result ) = 0;
+      virtual HRESULT __stdcall get_Timeout (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_Timeout (
+        /*[in]*/ long Value ) = 0;
+};
+
+struct __declspec(uuid("aed3a6b1-2171-11d2-b77c-0008c73aca8f"))
+ISMTPMail : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetMessage,put=PutMessage))
+    IMessagePtr Message;
+    __declspec(property(get=GetContentTransferEncoding,put=PutContentTransferEncoding))
+    _bstr_t ContentTransferEncoding;
+    __declspec(property(get=GetServerAddress,put=PutServerAddress))
+    _bstr_t ServerAddress;
+    __declspec(property(get=GetServerPort,put=PutServerPort))
+    long ServerPort;
+    __declspec(property(get=GetSender,put=PutSender))
+    _bstr_t Sender;
+    __declspec(property(get=GetReplyTo,put=PutReplyTo))
+    _bstr_t ReplyTo;
+    __declspec(property(get=GetSubject,put=PutSubject))
+    _bstr_t Subject;
+    __declspec(property(get=GetBody,put=PutBody))
+    _bstr_t Body;
+    __declspec(property(get=GetHideRecipients,put=PutHideRecipients))
+    _bstr_t HideRecipients;
+    __declspec(property(get=GetMailDomain,put=PutMailDomain))
+    _bstr_t MailDomain;
+    __declspec(property(get=GetLazysend,put=PutLazysend))
+    VARIANT_BOOL Lazysend;
+    __declspec(property(get=GetCharset,put=PutCharset))
+    _bstr_t Charset;
+    __declspec(property(get=GetSenderName,put=PutSenderName))
+    _bstr_t SenderName;
+    __declspec(property(get=GetContentType,put=PutContentType))
+    _bstr_t ContentType;
+    __declspec(property(get=GetPriority,put=PutPriority))
+    long Priority;
+    __declspec(property(get=GetMimeVersion,put=PutMimeVersion))
+    _bstr_t MimeVersion;
+    __declspec(property(get=GetEncoding,put=PutEncoding))
+    _bstr_t Encoding;
+    __declspec(property(get=GetReturnReceipt,put=PutReturnReceipt))
+    VARIANT_BOOL ReturnReceipt;
+    __declspec(property(get=GetHTMLBody,put=PutHTMLBody))
+    _bstr_t HTMLBody;
+    __declspec(property(get=GetLog))
+    _bstr_t Log;
+    __declspec(property(get=GetLogging,put=PutLogging))
+    VARIANT_BOOL Logging;
+    __declspec(property(get=GetISOEncodeHeaders,put=PutISOEncodeHeaders))
+    VARIANT_BOOL ISOEncodeHeaders;
+    __declspec(property(get=GetUsePipelining,put=PutUsePipelining))
+    VARIANT_BOOL UsePipelining;
+    __declspec(property(get=GetSilent,put=PutSilent))
+    VARIANT_BOOL Silent;
+    __declspec(property(get=GetErrorCode))
+    long ErrorCode;
+    __declspec(property(get=GetErrorMessage))
+    _bstr_t ErrorMessage;
+    __declspec(property(get=GetErrorSource))
+    _bstr_t ErrorSource;
+    __declspec(property(get=GetSimpleLayout,put=PutSimpleLayout))
+    VARIANT_BOOL SimpleLayout;
+    __declspec(property(get=GetRecipients))
+    _bstr_t Recipients;
+    __declspec(property(get=GetDeferredDelivery,put=PutDeferredDelivery))
+    DATE DeferredDelivery;
+    __declspec(property(get=GetVersion))
+    _bstr_t Version;
+    __declspec(property(get=GetMemCount))
+    long MemCount;
+    __declspec(property(get=GetMemSize))
+    long MemSize;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL Execute ( );
+    HRESULT AppendBodyFromFile (
+        _bstr_t FileName );
+    HRESULT AppendText (
+        _bstr_t Text );
+    _bstr_t AddAttachment (
+        _bstr_t FileName,
+        _bstr_t ContentType );
+    _bstr_t AddCustomAttachment (
+        _bstr_t FileName,
+        _bstr_t Data );
+    HRESULT AddRecipient (
+        _bstr_t EMail );
+    HRESULT AddRecipientCC (
+        _bstr_t EMail );
+    HRESULT AddRecipientBCC (
+        _bstr_t EMail );
+    HRESULT AddHeader (
+        _bstr_t XHeader,
+        _bstr_t Value );
+    HRESULT AddNativeHeader (
+        _bstr_t Header,
+        _bstr_t Value );
+    HRESULT ClearRecipients ( );
+    HRESULT ClearAttachments ( );
+    _bstr_t GetServerAddress ( );
+    void PutServerAddress (
+        _bstr_t Value );
+    long GetServerPort ( );
+    void PutServerPort (
+        long Value );
+    _bstr_t GetSender ( );
+    void PutSender (
+        _bstr_t Value );
+    _bstr_t GetSenderName ( );
+    void PutSenderName (
+        _bstr_t Value );
+    _bstr_t GetReplyTo ( );
+    void PutReplyTo (
+        _bstr_t Value );
+    _bstr_t GetSubject ( );
+    void PutSubject (
+        _bstr_t Value );
+    _bstr_t GetBody ( );
+    void PutBody (
+        _bstr_t Value );
+    _bstr_t GetContentType ( );
+    void PutContentType (
+        _bstr_t Value );
+    long GetPriority ( );
+    void PutPriority (
+        long Value );
+    _bstr_t GetHideRecipients ( );
+    void PutHideRecipients (
+        _bstr_t Value );
+    _bstr_t GetMailDomain ( );
+    void PutMailDomain (
+        _bstr_t Value );
+    VARIANT_BOOL GetLazysend ( );
+    void PutLazysend (
+        VARIANT_BOOL Value );
+    _bstr_t GetCharset ( );
+    void PutCharset (
+        _bstr_t Value );
+    _bstr_t GetContentTransferEncoding ( );
+    void PutContentTransferEncoding (
+        _bstr_t Value );
+    _bstr_t GetMimeVersion ( );
+    void PutMimeVersion (
+        _bstr_t Value );
+    _bstr_t GetEncoding ( );
+    void PutEncoding (
+        _bstr_t Value );
+    HRESULT AddRecipientEx (
+        _bstr_t EMail,
+        _bstr_t Name );
+    VARIANT_BOOL GetReturnReceipt ( );
+    void PutReturnReceipt (
+        VARIANT_BOOL Value );
+    HRESULT LogCustomMessage (
+        _bstr_t Message );
+    _bstr_t GetLog ( );
+    VARIANT_BOOL GetLogging ( );
+    void PutLogging (
+        VARIANT_BOOL Value );
+    _bstr_t GetHTMLBody ( );
+    void PutHTMLBody (
+        _bstr_t Value );
+    HRESULT Close ( );
+    VARIANT_BOOL GetISOEncodeHeaders ( );
+    void PutISOEncodeHeaders (
+        VARIANT_BOOL Value );
+    HRESULT ClearCustomHeaders ( );
+    VARIANT_BOOL GetUsePipelining ( );
+    void PutUsePipelining (
+        VARIANT_BOOL Value );
+    VARIANT_BOOL GetSilent ( );
+    void PutSilent (
+        VARIANT_BOOL Value );
+    long GetErrorCode ( );
+    _bstr_t GetErrorMessage ( );
+    _bstr_t GetErrorSource ( );
+    VARIANT_BOOL GetSimpleLayout ( );
+    void PutSimpleLayout (
+        VARIANT_BOOL Value );
+    HRESULT GetMessageBodyFromURL (
+        _bstr_t bstrURL,
+        _bstr_t bstrAuth );
+    _bstr_t AddURLAttachment (
+        _bstr_t bstrURL,
+        _bstr_t bstrAttachAs,
+        _bstr_t bstrAuth );
+    HRESULT ExtractEmailAddressesFromURL (
+        _bstr_t bstrURL,
+        _bstr_t bstrAuth );
+    _bstr_t GetRecipients ( );
+    DATE GetDeferredDelivery ( );
+    void PutDeferredDelivery (
+        DATE Value );
+    _bstr_t GetVersion ( );
+    long GetMemCount ( );
+    long GetMemSize ( );
+    IMessagePtr GetMessage ( );
+    void PutMessage (
+        struct IMessage * Value );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Execute (
+        /*[out,retval]*/ VARIANT_BOOL * RetVal ) = 0;
+      virtual HRESULT __stdcall raw_AppendBodyFromFile (
+        /*[in]*/ BSTR FileName ) = 0;
+      virtual HRESULT __stdcall raw_AppendText (
+        /*[in]*/ BSTR Text ) = 0;
+      virtual HRESULT __stdcall raw_AddAttachment (
+        /*[in]*/ BSTR FileName,
+        /*[in]*/ BSTR ContentType,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddCustomAttachment (
+        /*[in]*/ BSTR FileName,
+        /*[in]*/ BSTR Data,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddRecipient (
+        /*[in]*/ BSTR EMail ) = 0;
+      virtual HRESULT __stdcall raw_AddRecipientCC (
+        /*[in]*/ BSTR EMail ) = 0;
+      virtual HRESULT __stdcall raw_AddRecipientBCC (
+        /*[in]*/ BSTR EMail ) = 0;
+      virtual HRESULT __stdcall raw_AddHeader (
+        /*[in]*/ BSTR XHeader,
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_AddNativeHeader (
+        /*[in]*/ BSTR Header,
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_ClearRecipients ( ) = 0;
+      virtual HRESULT __stdcall raw_ClearAttachments ( ) = 0;
+      virtual HRESULT __stdcall get_ServerAddress (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_ServerAddress (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_ServerPort (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_ServerPort (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_Sender (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Sender (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_SenderName (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_SenderName (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_ReplyTo (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_ReplyTo (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_Subject (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Subject (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_Body (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Body (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_ContentType (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_ContentType (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_Priority (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_Priority (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_HideRecipients (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_HideRecipients (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_MailDomain (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_MailDomain (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_Lazysend (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_Lazysend (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_Charset (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Charset (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_ContentTransferEncoding (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_ContentTransferEncoding (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_MimeVersion (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_MimeVersion (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_Encoding (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Encoding (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_AddRecipientEx (
+        /*[in]*/ BSTR EMail,
+        /*[in]*/ BSTR Name ) = 0;
+      virtual HRESULT __stdcall get_ReturnReceipt (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_ReturnReceipt (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall raw_LogCustomMessage (
+        /*[in]*/ BSTR Message ) = 0;
+      virtual HRESULT __stdcall get_Log (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_Logging (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_Logging (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_HTMLBody (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_HTMLBody (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_Close ( ) = 0;
+      virtual HRESULT __stdcall get_ISOEncodeHeaders (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_ISOEncodeHeaders (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall raw_ClearCustomHeaders ( ) = 0;
+      virtual HRESULT __stdcall get_UsePipelining (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_UsePipelining (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_Silent (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_Silent (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_ErrorCode (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_ErrorMessage (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_ErrorSource (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_SimpleLayout (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_SimpleLayout (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall raw_GetMessageBodyFromURL (
+        /*[in]*/ BSTR bstrURL,
+        /*[in]*/ BSTR bstrAuth ) = 0;
+      virtual HRESULT __stdcall raw_AddURLAttachment (
+        /*[in]*/ BSTR bstrURL,
+        /*[in]*/ BSTR bstrAttachAs,
+        /*[in]*/ BSTR bstrAuth,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_ExtractEmailAddressesFromURL (
+        /*[in]*/ BSTR bstrURL,
+        /*[in]*/ BSTR bstrAuth ) = 0;
+      virtual HRESULT __stdcall get_Recipients (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_DeferredDelivery (
+        /*[out,retval]*/ DATE * Value ) = 0;
+      virtual HRESULT __stdcall put_DeferredDelivery (
+        /*[in]*/ DATE Value ) = 0;
+      virtual HRESULT __stdcall get_Version (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_MemCount (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_MemSize (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Message (
+        /*[out,retval]*/ struct IMessage * * Value ) = 0;
+      virtual HRESULT __stdcall put_Message (
+        /*[in]*/ struct IMessage * Value ) = 0;
+};
+
+struct __declspec(uuid("0c21b3b1-2b11-45f2-8a9e-dcc5032de98a"))
+IMailMerge : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetMergeAttachments,put=PutMergeAttachments))
+    VARIANT_BOOL MergeAttachments;
+    __declspec(property(get=GetMailTemplate,put=PutMailTemplate))
+    IMessagePtr MailTemplate;
+    __declspec(property(get=GetItem,put=PutItem))
+    _bstr_t Item[];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetMergeAttachments ( );
+    void PutMergeAttachments (
+        VARIANT_BOOL Value );
+    IMessagePtr GetMailTemplate ( );
+    void PutMailTemplate (
+        struct IMessage * Value );
+    HRESULT SetDebugMode (
+        _bstr_t TestMailAddress,
+        long TestCount );
+    _bstr_t GetItem (
+        _bstr_t VariableName );
+    void PutItem (
+        _bstr_t VariableName,
+        _bstr_t Value );
+    IMessagePtr Expand ( );
+    IMessagePtr ExpandFromRecordSet (
+        const _variant_t & RecordSet );
+    HRESULT BulkMerge (
+        const _variant_t & RecordSet,
+        VARIANT_BOOL enque,
+        _bstr_t Maildestination );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_MergeAttachments (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_MergeAttachments (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_MailTemplate (
+        /*[out,retval]*/ struct IMessage * * Value ) = 0;
+      virtual HRESULT __stdcall put_MailTemplate (
+        /*[in]*/ struct IMessage * Value ) = 0;
+      virtual HRESULT __stdcall raw_SetDebugMode (
+        /*[in]*/ BSTR TestMailAddress,
+        /*[in]*/ long TestCount ) = 0;
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ BSTR VariableName,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_Item (
+        /*[in]*/ BSTR VariableName,
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_Expand (
+        /*[out,retval]*/ struct IMessage * * Value ) = 0;
+      virtual HRESULT __stdcall raw_ExpandFromRecordSet (
+        /*[in]*/ VARIANT RecordSet,
+        /*[out,retval]*/ struct IMessage * * Value ) = 0;
+      virtual HRESULT __stdcall raw_BulkMerge (
+        /*[in]*/ VARIANT RecordSet,
+        VARIANT_BOOL enque,
+        BSTR Maildestination ) = 0;
+};
+
+struct __declspec(uuid("10e321cc-683e-4060-b938-4f53234d9593"))
+PGPDecodeResultCollection;
+    // [ default ] interface IPGPDecodeResultCollection
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\users\lenovo\documents\github\usefullproject\mailsys\debug\jmail.tli"
+
+} // namespace jmail
+
+#pragma pack(pop)
