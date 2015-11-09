@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E0087E80-E1E9-40A7-A852-DE44CF7D51CB}</ProjectGuid>
+    <RootNamespace>Calibration</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>AutoTestTool</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>AutoTestTool</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>depend;$(POINTGREY)\include\C;$(POINTGREY)\include;$(NIVISION)\Include;$(OpenCV231)\include;$(OpenCV231)\include\opencv;$(OpenCV231)\include\opencv2;$(PYLON_ROOT)\include;$(PYLON_GENICAM_ROOT)\library\CPP\include;$(mil_path32)\..\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>depend;$(POINTGREY)\lib\C;$(POINTGREY)\lib;$(NIVISION)\Lib32\MSVC;$(OpenCV231)\lib;$(PYLON_ROOT)\lib\Win32;$(PYLON_GENICAM_ROOT)\library\CPP\Lib\Win32_i86;$(mil_path32)\..\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>RobotControl.lib;FlyCapture2_Cd_$(PlatformToolset).lib;opencv_core231d.lib;opencv_highgui231d.lib;opencv_imgproc231d.lib;FlyCapture2GUId_$(PlatformToolset).lib;FlyCapture2d_$(PlatformToolset).lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>depend;$(POINTGREY)\include\C;$(POINTGREY)\include;$(NIVISION)\Include;$(OpenCV231)\include;$(OpenCV231)\include\opencv;$(OpenCV231)\include\opencv2;$(PYLON_ROOT)\include;$(PYLON_GENICAM_ROOT)\library\CPP\include;$(mil_path32)\..\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>depend;$(POINTGREY)\lib\C;$(POINTGREY)\lib;$(NIVISION)\Lib32\MSVC;$(OpenCV231)\lib;$(PYLON_ROOT)\lib\Win32;$(PYLON_GENICAM_ROOT)\library\CPP\Lib\Win32_i86;$(mil_path32)\..\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>RobotControl.lib;FlyCapture2_C_$(PlatformToolset).lib;FlyCapture2_v100.lib;opencv_core231.lib;opencv_highgui231.lib;opencv_imgproc231.lib;FlyCapture2GUI_$(PlatformToolset).lib;FlyCapture2_$(PlatformToolset).lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>if exist PostBuildRelease.bat PostBuildRelease.bat</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\arrow_m.cur" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\Calibration.ico" />
+    <None Include="res\Calibration.rc2" />
+    <None Include="res\case1.bmp" />
+    <None Include="res\case2.bmp" />
+    <None Include="res\case3.bmp" />
+    <None Include="res\case4.bmp" />
+    <None Include="res\case5.bmp" />
+    <None Include="res\case6.bmp" />
+    <None Include="res\case7.bmp" />
+    <None Include="res\down.ico" />
+    <None Include="res\grab.cur" />
+    <None Include="res\Init.bmp" />
+    <None Include="res\left.ico" />
+    <None Include="res\right.ico" />
+    <None Include="res\Tree.BMP" />
+    <None Include="res\up.bmp" />
+    <None Include="res\up.ico" />
+    <None Include="res\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BCMenu.h" />
+    <ClInclude Include="BtnST.h" />
+    <ClInclude Include="Calibration.h" />
+    <ClInclude Include="CalibrationDlg.h" />
+    <ClInclude Include="CvvImage.h" />
+    <ClInclude Include="DlgCircleTimes.h" />
+    <ClInclude Include="DlgFingerMove.h" />
+    <ClInclude Include="DlgIconDrag.h" />
+    <ClInclude Include="DlgInitSetting.h" />
+    <ClInclude Include="DlgInsertModule.h" />
+    <ClInclude Include="DlgModulePM.h" />
+    <ClInclude Include="DlgNewCase.h" />
+    <ClInclude Include="DlgPMSet.h" />
+    <ClInclude Include="DlgPreview.h" />
+    <ClInclude Include="DlgRobotSet.h" />
+    <ClInclude Include="DlgRotate.h" />
+    <ClInclude Include="DlgTemplate.h" />
+    <ClInclude Include="DlgTimeDelay.h" />
+    <ClInclude Include="DlgTriggerMode.h" />
+    <ClInclude Include="DlgTriggerSet.h" />
+    <ClInclude Include="Redirect.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RichEditEx.h" />
+    <ClInclude Include="Splash.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="XTreeCtrl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BCMenu.cpp" />
+    <ClCompile Include="BtnST.cpp" />
+    <ClCompile Include="Calibration.cpp" />
+    <ClCompile Include="CalibrationDlg.cpp" />
+    <ClCompile Include="CvvImage.cpp" />
+    <ClCompile Include="DlgCircleTimes.cpp" />
+    <ClCompile Include="DlgFingerMove.cpp" />
+    <ClCompile Include="DlgIconDrag.cpp" />
+    <ClCompile Include="DlgInitSetting.cpp" />
+    <ClCompile Include="DlgInsertModule.cpp" />
+    <ClCompile Include="DlgModulePM.cpp" />
+    <ClCompile Include="DlgNewCase.cpp" />
+    <ClCompile Include="DlgPMSet.cpp" />
+    <ClCompile Include="DlgPreview.cpp" />
+    <ClCompile Include="DlgRobotSet.cpp" />
+    <ClCompile Include="DlgRotate.cpp" />
+    <ClCompile Include="DlgTemplate.cpp" />
+    <ClCompile Include="DlgTimeDelay.cpp" />
+    <ClCompile Include="DlgTriggerMode.cpp" />
+    <ClCompile Include="DlgTriggerSet.cpp" />
+    <ClCompile Include="Redirect.cpp" />
+    <ClCompile Include="RichEditEx.cpp" />
+    <ClCompile Include="Splash.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="XTreeCtrl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Calibration.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Calibration.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

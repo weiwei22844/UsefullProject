@@ -29,7 +29,16 @@
 *.pch
 *.dep
 *.suo
+*.tlog
+
+# useless files
+*.user
+*.sdf
+*.opensdf
 
 # output file
-InputCN/Debug
-InputCN/Release
+*/Debug/
+*/Release/
+*/bin/
+*/ipch/
+*/x64/
