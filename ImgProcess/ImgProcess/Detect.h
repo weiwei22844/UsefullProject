@@ -8,6 +8,6 @@ public:
     ~CDetect(void);
 
     BOOL detectSkin(IplImage *pSrc);
-
+    BOOL detectPedestrian(IplImage *pSrc);
 };
 

@@ -94,6 +94,8 @@ BEGIN_MESSAGE_MAP(CImgProcessDlg, CDialogEx)
     ON_COMMAND(ID_FILTER_SIN, &CImgProcessDlg::OnFilterSin)
     ON_COMMAND(ID_DETECT_SKIN, &CImgProcessDlg::OnDetectSkin)
     ON_COMMAND(ID_FILTER_OIL, &CImgProcessDlg::OnFilterOil)
+    ON_COMMAND(ID_DETECT_PEDESTRIAN, &CImgProcessDlg::OnDetectPedestrian)
+    ON_COMMAND(ID_FILTER_CARTOON, &CImgProcessDlg::OnFilterCartoon)
 END_MESSAGE_MAP()
 
 int __cdecl cvWindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam, int* pProcessed)
@@ -1010,7 +1012,7 @@ void CImgProcessDlg::OnEditRotateclockwise()
 void CImgProcessDlg::OnFilterIce()
 {
     // TODO: Add your command handler code here
-    Filter filter;
+    CFilter filter;
     if(filter.Ice(m_cimg.GetImage()))
         Invalidate(FALSE);
 }
@@ -1019,7 +1021,7 @@ void CImgProcessDlg::OnFilterIce()
 void CImgProcessDlg::OnFilterOld()
 {
     // TODO: Add your command handler code here
-    Filter filter;
+    CFilter filter;
     if(filter.Old(m_cimg.GetImage()))
         Invalidate(FALSE);
 }
@@ -1028,7 +1030,7 @@ void CImgProcessDlg::OnFilterOld()
 void CImgProcessDlg::OnFilterComic()
 {
     // TODO: Add your command handler code here
-    Filter filter;
+    CFilter filter;
     if(filter.Comic(m_cimg.GetImage()))
         Invalidate(FALSE);
 }
@@ -1037,7 +1039,7 @@ void CImgProcessDlg::OnFilterComic()
 void CImgProcessDlg::OnFilterSpread()
 {
     // TODO: Add your command handler code here
-    Filter filter;
+    CFilter filter;
     if(filter.Spread(m_cimg.GetImage()))
         Invalidate(FALSE);
 }
@@ -1046,7 +1048,7 @@ void CImgProcessDlg::OnFilterSpread()
 void CImgProcessDlg::OnFilterSin()
 {
     // TODO: Add your command handler code here
-    Filter filter;
+    CFilter filter;
     if(filter.Sin(m_cimg.GetImage()))
         Invalidate(FALSE);
 }
@@ -1054,8 +1056,18 @@ void CImgProcessDlg::OnFilterSin()
 void CImgProcessDlg::OnFilterOil()
 {
     // TODO: Add your command handler code here
-    Filter filter;
+    CFilter filter;
     if(filter.Oil(m_cimg.GetImage()))
+        Invalidate(FALSE);
+    else
+        MessageBox("不支持当前格式");
+}
+
+void CImgProcessDlg::OnFilterCartoon()
+{
+    // TODO: Add your command handler code here
+    CFilter filter;
+    if(filter.Cartoon(m_cimg.GetImage()))
         Invalidate(FALSE);
     else
         MessageBox("不支持当前格式");
@@ -1066,6 +1078,16 @@ void CImgProcessDlg::OnDetectSkin()
     // TODO: Add your command handler code here
     CDetect detect;
     if(detect.detectSkin(m_cimg.GetImage()))
+        Invalidate(FALSE);
+    else
+        MessageBox("不支持当前格式");
+}
+
+void CImgProcessDlg::OnDetectPedestrian()
+{
+    // TODO: Add your command handler code here
+    CDetect detect;
+    if(detect.detectPedestrian(m_cimg.GetImage()))
         Invalidate(FALSE);
     else
         MessageBox("不支持当前格式");

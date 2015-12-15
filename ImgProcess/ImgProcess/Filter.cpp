@@ -4,16 +4,16 @@ static char g_dbgBuf[500];
 
 using namespace cv;
 
-Filter::Filter(void)
+CFilter::CFilter(void)
 {
 }
 
 
-Filter::~Filter(void)
+CFilter::~CFilter(void)
 {
 }
 
-BOOL Filter::Ice(IplImage* pSrc)
+BOOL CFilter::Ice(IplImage* pSrc)
 {
     if(!pSrc)
         return FALSE;
@@ -73,7 +73,7 @@ BOOL Filter::Ice(IplImage* pSrc)
     return TRUE;
 }
 
-BOOL Filter::Old(IplImage *pSrc)
+BOOL CFilter::Old(IplImage *pSrc)
 {
     if(!pSrc)
         return FALSE;
@@ -117,7 +117,7 @@ BOOL Filter::Old(IplImage *pSrc)
     return TRUE;
 }
 
-BOOL Filter::Comic(IplImage *pSrc)
+BOOL CFilter::Comic(IplImage *pSrc)
 {
     if(!pSrc)
         return FALSE;
@@ -183,7 +183,7 @@ BOOL Filter::Comic(IplImage *pSrc)
     }
 }
 
-BOOL Filter::Spread(IplImage *pSrc)
+BOOL CFilter::Spread(IplImage *pSrc)
 {
     if(!pSrc)
         return FALSE;
@@ -227,7 +227,7 @@ BOOL Filter::Spread(IplImage *pSrc)
     return TRUE;
 }
 
-BOOL Filter::Sin(IplImage *pSrc)
+BOOL CFilter::Sin(IplImage *pSrc)
 {
     if(!pSrc)
         return FALSE;
@@ -293,7 +293,7 @@ BOOL Filter::Sin(IplImage *pSrc)
 * 基于像素权重实现图像的像素模糊从而达到近似油画效果模糊
 * 其实卷积的变种，不是基于Stroke维诺图算法与采样moment算法
 */
-BOOL Filter::Oil(IplImage *pSrc)
+BOOL CFilter::Oil(IplImage *pSrc)
 {
     if(!pSrc)
         return FALSE;
@@ -399,6 +399,69 @@ BOOL Filter::Oil(IplImage *pSrc)
     delete[] ravg;
     delete[] gavg;
     delete[] bavg;
+
+    return TRUE;
+}
+
+
+/*
+* http://blog.csdn.net/yangtrees/article/details/7544481
+* 
+* 
+*/
+BOOL CFilter::Cartoon(IplImage *pSrc)
+{
+    if(!pSrc)
+        return FALSE;
+    if(pSrc->nChannels != 3 && pSrc->nChannels != 4)
+        return FALSE;
+
+	Mat src1(pSrc);
+	Mat img;
+	//双边滤波，第3个参数d可以说d>5时不能实时处理，最后两个参数是sigma参数，一般相同，
+	//<10时基本没效果, >150时漫画效果
+	bilateralFilter(src1,img,5,150,150);
+	bilateralFilter(img,src1,5,150,150);
+	//img.copyTo(src1);
+		
+	Mat src;
+	cvtColor(src1,src,CV_BGR2GRAY);
+	//粗线，越大越粗，但是会有大量噪点
+	Mat imgL;
+	//第三个参数ddepth表示目标图像的深度，ddepth=-1时，与原图像一致
+	Laplacian(src,imgL,-1,3,1);
+	//imshow("Laplacian",imgL);
+	//waitKey(0);
+
+	//细线
+	Mat imgC;
+	Canny(src,imgC,30,90);
+	//imshow("Canny",imgC);
+	//waitKey(0);
+
+	Mat imgS,imgSx,imgSy,imgS0;
+	Sobel(src,imgSx,-1,0,1);
+	Sobel(src,imgSx,-1,1,0);
+	imgS=imgSx+imgSy;
+	Sobel(src,imgS0,-1,1,1);
+	//imshow("Sobel0",imgS0);
+	//imshow("Sobel",imgS);
+	//waitKey(0);
+	
+	Mat imgTotal;
+	imgTotal=imgC+imgS+imgL;
+	//imgTotal.convertTo(imgTotal,CV_32FC1);
+	normalize(imgTotal,imgTotal,255,0,CV_MINMAX);
+	GaussianBlur(imgTotal,imgTotal,Size(3,3),3);
+	threshold(imgTotal,imgTotal,100,255,THRESH_BINARY_INV);
+	//imshow("Total",imgTotal);
+	//waitKey(0);
+
+	Mat imgTotalC3;
+	cvtColor(imgTotal,imgTotalC3,CV_GRAY2BGR);
+	bitwise_and(src1,imgTotalC3,src1);
+	//imshow("Result",src1);
+	//waitKey(0);
 
     return TRUE;
 }

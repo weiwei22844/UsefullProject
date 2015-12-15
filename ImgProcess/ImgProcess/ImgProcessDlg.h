@@ -80,7 +80,9 @@ public:
     afx_msg void OnFilterSpread();
     afx_msg void OnFilterSin();
     afx_msg void OnFilterOil();
+    afx_msg void OnFilterCartoon();
     afx_msg void OnDetectSkin();
+    afx_msg void OnDetectPedestrian();
 };
 
 extern CImgProcessDlg* pMainDlg;

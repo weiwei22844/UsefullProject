@@ -1,11 +1,11 @@
 #pragma once
 #include "opencv2\opencv.hpp"
 
-class Filter
+class CFilter
 {
 public:
-    Filter(void);
-    ~Filter(void);
+    CFilter(void);
+    ~CFilter(void);
 
     BOOL Ice(IplImage *pSrc);
     BOOL Old(IplImage *pSrc);
@@ -13,5 +13,6 @@ public:
     BOOL Spread(IplImage *pSrc);
     BOOL Sin(IplImage *pSrc);
     BOOL Oil(IplImage *pSrc);
+    BOOL Cartoon(IplImage *pSrc);
 };
 
